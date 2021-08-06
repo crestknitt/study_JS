@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6em;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'gmarketsansMedium';
+  font-size: 16px;
+  color: #0023a0;
+  background-color: #fff;
+  text-align: left;
+}
+a {
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  background-color: #ddd;
+  transition: 0.5s;
+}
+/* a:hover {
+  opacity: 0.5;
+} */
+
+/* wrap */
+.container {
+  height: 100vh;
+}
+.wrap {
+  width: 500px;
+  margin: 30px auto;
+  margin-bottom: 0;
+}
+img {
+  margin: auto;
+  display: block;
+}
+form {
+  width: 500px;
+  margin: 30px auto;
+}
+a.join {
+  width: 500px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px; 
+  font-family:  'GmarketSansBold';
+  font-size: 20px;
+}
+
+
+.item {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* common contents */
+label {
+  display: block;
+}
+label .essential {
+  color:#FF0068;
+  font-size: 10px;
+  padding-left: 2px;
+}
+.inner {
+  width: 500px;
+}
+input {
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #334FB3;
+  border-radius: 6px;
+  padding-left: 10px;
+}
+select {
+  border: 1px solid #334FB3;
+  border-radius: 6px;
+  height: 50px;
+}
+input:focus, select:focus {
+  outline: 0 none;
+  border: 1px solid #FF0068;
+}
+.error {
+  color:#FF0068;
+  /* display: none; */
+  font-size: 12px;
+}
+
+/* contents */
+#id, #pw, #pw-c, #email {
+  width: 500px;
+}
+
+.pw-box {
+  position: relative;
+}
+.pw-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%,-50%);
+  width: 20px;
+  opacity: 0.3;
+}
+
+
+input[type='tel'] {
+  width: 70%;
+}
+.tel a {
+  float: right;
+  width: 28%;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+input#tel-c {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #eee;
+}
+input#tel-c:focus {
+  border: 1px solid #334FB3;
+}
+
+.birth input[type="text"],
+.birth select {
+  width: 32%;
+}
