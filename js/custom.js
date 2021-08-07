@@ -18,14 +18,17 @@ var join= document.querySelector('#join');
 var error= document.querySelectorAll('.error');
 
 // 핸들러 연결
-id.addEventListener("change",checkId);
+//이 경우는 실시간 검증이 되지 않습니다. html input 요소의 onkey event를 이용하면 실시간 검증이 됩니다.
+//다른 요소들도 마찬가지겠죠.
+//id.addEventListener("change",checkId);
+id.onkeyup = checkId
 pw.addEventListener("change",checkPw);
 pwC.addEventListener("change",comparePw);
 email.addEventListener("change",checkEmail);
-yy.addEventListener("change",isBirthCompleted);
-mm.addEventListener("change",isBirthCompleted);
-dd.addEventListener("change",isBirthCompleted);
-tel.addEventListener("change",checkPhoneNum);
+// yy.addEventListener("change",isBirthCompleted);//정의되지 않은 function은 binding하지 말아야 합니다. -> script error
+// mm.addEventListener("change",isBirthCompleted);
+// dd.addEventListener("change",isBirthCompleted);
+// tel.addEventListener("change",checkPhoneNum);
 userC.addEventListener("change",checkUser);
 join.addEventListener("change",checkJoin);
 
@@ -41,7 +44,9 @@ join.addEventListener("change",checkJoin);
 
 // 콜백함수들
 function checkId() {
-  var idPattern = /[a-zA-Z0-9_-]{5,20}/;
+  // var idPattern = /[a-zA-Z0-9_-]{5,20}/;
+  var idPattern = /^[a-zA-Z]+[a-zA-Z0-9_-]{5,19}$/; //알파벳으로 시작하고, 알파벳 또는 숫자,_,-로 구성되어 끝나는, 6~20자 이내의 아이디
+  console.log(idPattern.test(id.value));//콘솔 로그를 출력 -> 향후 어떤 데이터의 실제 값을 보고 싶으면 이와 같이 하시면 확인 할 수 있습니다.
   if (id.value === "") {
     error[0].innerHTML="필수 정보입니다.";
     error[0].style.color = "#FF0068";
@@ -97,17 +102,18 @@ function checkEmail() {
   // var emailPattern = /[a-z0-9]{2,}@[a-z0-9-]{2,}\.[a-z0-9]{2,}/;
   if(email.value===""){
     error[3].innerHTML="필수정보 입니다.";
-    email.style.border = "1px solid #FF0068"; 
+    email.style.border = "1px solid #FF0068";
   } else if(!emailPattern.test(email.value)){
     error[3].innerHTML="이메일 형식이 잘못되었습니다.";
-    email.style.border = "1px solid #FF0068"; 
+    email.style.border = "1px solid #FF0068";
   } else {
+    //로직이 없으므로 else 구문은 불필요합니다.
     return;
   }
 }
 
 function checkUser() {
-  
+
 }
 function checkJoin() {
 

@@ -8,7 +8,7 @@
   <title>회원가입 자바스크립트 유효성검사</title>
 </head>
 <body>
-  
+
   <div class="container">
     <div class="wrap">
       <img src="images/head-logo.png" alt="logo">
@@ -32,7 +32,7 @@
           </div>
           <span class="error"></span>
         </div>
-        
+
         <!-- PWC -->
         <div class="item">
           <label for="pw-c">비밀번호<span class="essential">★</span></label>
@@ -42,7 +42,7 @@
           </div>
           <span class="error"></span>
         </div>
-        
+
         <!-- E-MAIL -->
         <div class="item">
           <label for="email">이메일<span class="essential">★</span></label>
@@ -62,15 +62,17 @@
           </div>
           <span class="error"></span>
         </div>
-        
+
         <!-- user name -->
         <!-- gender -->
         <!-- JOB -->
-
+        <!--
+          전화번호, 생년월일은 숫자만 입력 가능해야 합니다.
+        -->
         <!-- BIRTH -->
         <div class="item">
-          <label for="birth">생년월일(선택)</label>
-          <div class="inner birth">
+          <label for="birth">생년월일(선택)</label> <!-- reference는 id로 지정합니다. -->
+          <div class="inner birth" id="birth">
             <input id="yy" type="text" maxlength="4" placeholder="생년">
             <select id="mm">
               <option value="01">1월</option>
@@ -89,7 +91,7 @@
             <input id="dd" type="text" maxlength="2" placeholder="일">
           </div>
         </div>
-        
+
       </form>
       <a class="join"  id="join" >가입하기</a>
     </div>
@@ -101,7 +103,7 @@
 
 
 
-<!-- 
+<!--
 
   function checkId() {
     var idPattern = /[a-zA-Z0-9_-]{5,20}/;
